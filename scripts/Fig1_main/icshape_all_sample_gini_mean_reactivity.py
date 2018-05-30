@@ -60,7 +60,7 @@ def all_gini(RPKM_combine=None, mode='gini', null_pct=1):
 
     trans_dict = loadTransGtfBed2('/Share/home/zhangqf7/gongjing/zebrafish/data/reference/transcriptome/danRer10.refSeq.transcriptome.trans.bed2')
 
-    sample_ls = ['egg', '1cell', '4cell', '64cell', '1K', 'sphere', 'shield']
+    sample_ls = ['egg', '1cell', '4cell', '64cell', 'sphere', 'shield']
     sample_path = ['/Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/%s.icshape.w200.s30.T2.t200.out'%(i) for i in sample_ls] # norm by window
 
     sample_ic_dict =  nested_dict()
