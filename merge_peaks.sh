@@ -4,6 +4,15 @@ tranSize=/Share/home/zhangqf7/gongjing/zebrafish/data/reference/transcriptome/da
 tranFa=/Share/home/zhangqf7/gongjing/zebrafish/data/reference/transcriptome/danRer10.refSeq.transcriptome.fa
 meme=/Share/home/zhangqf7/gongjing/zebrafish/script/zhangting/paris_RBP/motif_CISBP_RNA_narrow/Collapsed.used.meme
 
+
+
+mergePeaks -d 10 -prefix new_mergepeaks_d10 -venn ./new_mergepeaks_d10 -venn ./new_mergepeaks_d10/venn.txt -matrix ./new_mergepeaks_d10/matrix.txt \
+			egg_cell1/egg_cell1-var.sorted.merge.bed \
+			cell1_cell4/cell1_cell4-var.sorted.merge.bed \
+			cell4_cell64/cell4_cell64-var.sorted.merge.bed \
+			cell64_sphere/cell64_sphere-var.sorted.merge.bed \
+			sphere_shield/sphere_shield-var.sorted.merge.bed
+
 cd $d
 
 #cat way1.bed way2.bed way3.bed way4.bed way5.bed > way12345.bed
