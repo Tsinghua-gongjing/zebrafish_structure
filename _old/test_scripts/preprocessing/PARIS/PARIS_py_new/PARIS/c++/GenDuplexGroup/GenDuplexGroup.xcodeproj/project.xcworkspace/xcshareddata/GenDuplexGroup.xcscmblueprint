@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7503F7F0C07504FCFB75BE8CA604E77AF28FCBFF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3D81F92FE062A4BCD4AF63D82FF9ADB9BA8AF034" : 9223372036854775807,
+    "7503F7F0C07504FCFB75BE8CA604E77AF28FCBFF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7D2A6566-C493-42EE-827F-B231CEEC6AD0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3D81F92FE062A4BCD4AF63D82FF9ADB9BA8AF034" : "",
+    "7503F7F0C07504FCFB75BE8CA604E77AF28FCBFF" : "PARIS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GenDuplexGroup",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "c++\/GenDuplexGroup\/GenDuplexGroup.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/qczhang\/paris.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3D81F92FE062A4BCD4AF63D82FF9ADB9BA8AF034"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lipan6461188\/PARIS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7503F7F0C07504FCFB75BE8CA604E77AF28FCBFF"
+    }
+  ]
+}

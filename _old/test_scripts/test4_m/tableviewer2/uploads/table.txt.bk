@@ -1,0 +1,20 @@
+
+# Medium tab-delimited table with mixed row and column labels.
+#
+# + column order (first row)
+#
+# When uploading this file, make sure you check off the fields shown below.
+# 
+# order	 [ ] col with row order	  [x] row with col order
+# size	 [ ] col with row size	  [ ] row with col size
+# color	 [ ] col with row colors  [ ] row with col colors
+
+data	1	7	3	4	2	6	5
+data	A	B	C	D	E	F	G
+A	105	450	92	96	5	301	195
+B	20	46	78	33	53	28	83
+C	118	553	94	317	25	89	287
+D	100	18	108	104	105	25	173
+H	23	83	123	342	98	48	205
+I	173	428	103	325	82	215	23
+J	305	173	138	49	81	258	207
