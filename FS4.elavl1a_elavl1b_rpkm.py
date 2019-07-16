@@ -1,3 +1,15 @@
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+plt.rcParams["font.family"] = "Helvetica"
+import seaborn as sns
+sns.set(style="ticks")
+sns.set_context("poster")
+from nested_dict import nested_dict
+import sys,os
+import pandas as pd, numpy as np
+from scipy import stats
+
 # /Share2/home/zhangqf7/gongjing/zebrafish/data/RPKM_new
 # [zhangqf7@ZIO01 RPKM_new]$ grep NM_131452 DMSO*
 # DMSO_1cell_rep1:NM_131452       2133    73155   0       269.213107543935
@@ -76,4 +88,4 @@ rects2 = ax.bar(ind + width/2, elavl1b_mean, width, yerr=elavl1b_std,
 ax.legend()
 
 plt.tight_layout()
-plt.savefig('/Users/gongjing/SeafileSyn/Project/zebrafish/RPKM_elavl1.errbar.pdf')
+plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/FS4.elavl1a_elavl1b_rpkm.pdf')

@@ -1,24 +1,35 @@
-from scipy import stats
+from pandas.io.parsers import read_csv
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+plt.rcParams["font.family"] = "Helvetica"
+import seaborn as sns
 sns.set(style="ticks")
 sns.set_context("poster")
-import matplotlib.pyplot as plt
+from nested_dict import nested_dict
+import sys,os
+import pandas as pd, numpy as np
+
+from scipy import stats
 import statsmodels.stats.multitest as multi
 from adjustText import adjust_text
-from nested_dict import nested_dict
 
 def parse_IPMASS(t=None, mode='log2'):
     if t is None:
         t = 'T1'
-    f = './%s_P_N.xlsx'%(t)
+    f = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/IP-mass/%s_P_N.xlsx'%(t)
 
     df = pd.read_excel(f)
     print "read: %s, num=%s"%(f, df.shape[0])
 
-    cols_keep = ['Gene names', #'Q-value', 'Score', 
-                 'LFQ intensity %s_N1'%(t), 'LFQ intensity %s_N2'%(t), 'LFQ intensity %s_N3'%(t), 'LFQ intensity %s_N4'%(t),
-                 'LFQ intensity %s_P1'%(t), 'LFQ intensity %s_P2'%(t), 'LFQ intensity %s_P3'%(t), 'LFQ intensity %s_P4'%(t),]
-    rep_N = ['LFQ intensity %s_N1'%(t), 'LFQ intensity %s_N2'%(t), 'LFQ intensity %s_N3'%(t), 'LFQ intensity %s_N4'%(t),]
-    rep_P = ['LFQ intensity %s_P1'%(t), 'LFQ intensity %s_P2'%(t), 'LFQ intensity %s_P3'%(t), 'LFQ intensity %s_P4'%(t),]
+#     cols_keep = ['Gene names', #'Q-value', 'Score', 
+#                  'LFQ intensity %s_N1'%(t), 'LFQ intensity %s_N2'%(t), 'LFQ intensity %s_N3'%(t), 'LFQ intensity %s_N4'%(t),
+#                  'LFQ intensity %s_P1'%(t), 'LFQ intensity %s_P2'%(t), 'LFQ intensity %s_P3'%(t), 'LFQ intensity %s_P4'%(t),]
+#     rep_N = ['LFQ intensity %s_N1'%(t), 'LFQ intensity %s_N2'%(t), 'LFQ intensity %s_N3'%(t), 'LFQ intensity %s_N4'%(t),]
+#     rep_P = ['LFQ intensity %s_P1'%(t), 'LFQ intensity %s_P2'%(t), 'LFQ intensity %s_P3'%(t), 'LFQ intensity %s_P4'%(t),]
+    rep_N = ['LFQ intensity %s_N1'%(t), 'LFQ intensity %s_N2'%(t)]
+    rep_P = ['LFQ intensity %s_P1'%(t), 'LFQ intensity %s_P2'%(t)]
+    cols_keep = ['Gene names'] + rep_N + rep_P
 
     # print df.head()
 
@@ -92,43 +103,41 @@ def parse_IPMASS(t=None, mode='log2'):
                  'sum(P)-sum(N)', 'mean(P)-mean(N)', 'log2(mean(P)/mean(N))',
                 'pvalue', 'qvalue', '-log10(pvalue)', '-log10(qvalue)']
     df = df[cols_keep+cols_calc]
-    df.to_excel('./%s_enrich_table.xlsx'%(t), header=True, index=False)
+    df.to_excel('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/IP-mass/%s_enrich_table.xlsx'%(t), header=True, index=False)
     df.head()
     
-    fig,ax=plt.subplots(figsize=(10, 15))
-    x = 'log2(mean(P)/mean(N))'
-    y = '-log10(pvalue)'
-    df.plot(kind='scatter', x=x, y=y, ax=ax)
-    ratio_max = max(df[x])
-    plt.axvline(x=0, ymin=0, ymax=1, ls='--', color='grey')
-    plt.axhline(y=-np.log10(0.05), xmin=0, xmax=1, ls='--', color='grey')
+    fig,ax=plt.subplots(figsize=(6, 6))
+    x_col = 'log2(mean(P)/mean(N))'
+    x_col = 'log2(mean(N))'
+    y_col = '-log10(pvalue)'
+    y_col = 'log2(mean(P))'
+    df.plot(kind='scatter', x=x_col, y=y_col, ax=ax)
+    ratio_max = max(df[x_col])
+#     plt.axvline(x=0, ymin=0, ymax=1, ls='--', color='grey')
+#     plt.axhline(y=-np.log10(0.05), xmin=0, xmax=1, ls='--', color='grey')
 #     ax.set_xlim(-ratio_max-1, ratio_max+1)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     plt.title('time: %s (n=%s)'%(t, df.shape[0]))
-    savefn = './%s_enrich_pvalue.pdf'%(t)
+    savefn = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/IP-mass/%s_enrich_pvalue.pdf'%(t)
     
     df['Gene Names'] = [i.split(';')[0] for i in df['Gene names']]
     texts = []
-    for x,y,t in zip(df['log2(mean(P)/mean(N))'], df['-log10(pvalue)'], df['Gene Names']):
-        if y > -np.log10(0.05):
+    for x,y,t in zip(df[x_col], df[y_col], df['Gene Names']):
+        if y > -np.log10(0.05) and t == 'elavl1':
 #             ax.annotate(t, (x, y), fs=3)
             texts.append(plt.text(x, y, t, fontsize=12))
 #     plt.tight_layout()
     adjust_text(texts, only_move={'text': 'x'})
     
-    
+    plt.tight_layout()
     plt.savefig(savefn)
     plt.close()
-    
-    
     
     return df, rep_N_log2_ls, rep_P_log2_ls, df[cols_keep+cols_calc]
 
 df1, rep_N_log2_ls1, rep_P_log2_ls1, df1_save = parse_IPMASS(t='T1', mode='normal')
 df2, rep_N_log2_ls2, rep_P_log2_ls2, df2_save = parse_IPMASS(t='T2', mode='normal')
-df3, rep_N_log2_ls3, rep_P_log2_ls3, df3_save = parse_IPMASS(t='T3', mode='normal')
-# df4, rep_N_log2_ls4, rep_P_log2_ls4 = parse_IPMASS(t='T4', mode='normal')
 
 def plot_pair(df1, df2, label1, label2, RBP_type_dict):
     matplotlib_venn.venn2([set(list(df1['Gene Names'])), set(list(df2['Gene Names']))], set_labels=[label1, label2])
@@ -169,21 +178,23 @@ def plot_pair(df1, df2, label1, label2, RBP_type_dict):
     return df
 
 df = plot_pair(df1, df2, 'T1', 'T2', RBP_type_dict)
-df.to_csv('./T1_T2.txt', header=True, index=True, sep='\t')
+df.to_csv('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/IP-mass/T1_T2.txt', header=True, index=True, sep='\t')
+
+
 
 
 # FS.DE
-df2['RBP_type'] = [RBP_type_dict[i] if RBP_type_dict.has_key(i) else 'other' for i in df2['Gene Names']]
+# df2['RBP_type'] = [RBP_type_dict[i] if RBP_type_dict.has_key(i) else 'other' for i in df2['Gene Names']]
 
-fig, ax = plt.subplots(figsize=(8,14))
-groups = df2.groupby('RBP_type')
-for name, group in groups:
-    ax.plot(group['log2(mean(P)/mean(N))'], group['-log10(qvalue)'], marker='o', linestyle='', ms=12, label=name)
+# fig, ax = plt.subplots(figsize=(8,14))
+# groups = df2.groupby('RBP_type')
+# for name, group in groups:
+#     ax.plot(group['log2(mean(P)/mean(N))'], group['-log10(qvalue)'], marker='o', linestyle='', ms=12, label=name)
     
-ax.legend()
-ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-ax.set_xlabel('%s, log2(P/N)'%('P/N'))
-ax.set_ylabel('%s, log2(P/N)'%('-log10(pvalue)'))
-#     ax.set_xlim(0,)
-ax.set_ylim(-0.1,)
-plt.savefig('./%s.enrich_pvalue.pdf'%('T2'))
+# ax.legend()
+# ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+# ax.set_xlabel('%s, log2(P/N)'%('P/N'))
+# ax.set_ylabel('%s, log2(P/N)'%('-log10(pvalue)'))
+# #     ax.set_xlim(0,)
+# ax.set_ylim(-0.1,)
+# plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/IP-mass/%s.enrich_pvalue.pdf'%('T2'))

@@ -1,4 +1,0 @@
-This dictionary contain all the required code to calculate the icSHAPE score from the original sequencing data file(fastq)
-STEP1: run the each replicate of the sample use icshape_preprocessing_and_rtcal_wrapper.sh  to get RT file for each replicate
-STEP2: run the RTCombine.py to combine the replicates
-STEP3: run the normalize_calcenrich_pipeline.py to calculate the final icSHAPE score for each transcript with the background and foreground combined RT file as input examplified in batch_norm_calc.sh 

@@ -51,7 +51,7 @@ def ic_density(bed=None, cut_num_ls=None, savefn=None, split_overlap_ratio_min=0
 	if bed is None:
 		bed = '/Share/home/zhangqf7/gongjing/zebrafish/result/dynamic_merge_region/005_005_new/abs/%s/window-anno.bed'%(sample)
 	if cut_num_ls is None:
-		cut_num_ls = [5, 50, 20]
+		cut_num_ls = [20, 200, 80]
 	if savefn is None:
 		savefn = '/Share/home/zhangqf7/gongjing/zebrafish/result/icshape_signal_mean/sample_%s_dynamic_density.txt'%(sample)
 
@@ -137,7 +137,7 @@ def ic_density_plot(txt=None):
 	df_stat = df_stat / float(df_stat.sum())
 	fig,ax=plt.subplots()
 	df_stat.plot(kind='line', ax=ax)
-	cut_num_ls = [5, 50, 20]
+	cut_num_ls = [20, 200, 80]
 	plt.axvline(x=cut_num_ls[0]+0.5,linestyle='--',color='black')
 	plt.axvline(x=cut_num_ls[0]+cut_num_ls[1]+0.5,linestyle='--',color='black')
 	plt.savefig(txt.replace('.txt', '.pdf'))
@@ -189,8 +189,12 @@ def ic_seq_plot(txt=None):
 
 def main():
 	# savefn = ic_density(sample='egg_cell1')
-	savefn = ic_density(bed='/Share/home/zhangqf7/gongjing/zebrafish/result/dynamic_merge_region/005_005_new/abs/new_mergepeaks_d10/separate/way2345.bed', 
-			   savefn='/Share/home/zhangqf7/gongjing/zebrafish/result/dynamic_merge_region/005_005_new/abs/new_mergepeaks_d10/separate/way2345.bed.txt')
+	savefn = ic_density(bed='/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/way2345/way2345.bed', 
+			   savefn='/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/way2345/way2345.bed.txt')
+	ic_density_plot(savefn)
+
+	savefn = ic_density(bed='/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/way1/way1.bed', 
+			   savefn='/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/way1/way1.bed.txt')
 	ic_density_plot(savefn)
 	# ic_seq_plot('/Share/home/zhangqf7/gongjing/zebrafish/result/icshape_signal_mean/sample_egg_cell1_dynamic_density.seq.txt')
 

@@ -1,9 +1,0 @@
-chr - proteinCoding proteinCoding 0 167060 colorproteincoding
-chr - lncRNA lncRNA 0 22171 colorlncrna
-chr - miRNA miRNA 0 40370 colormirna
-chr - rRNA rRNA 0 17286 colorrrna
-chr - snoRNA snoRNA 0 1480 colorsnorna
-chr - snRNA snRNA 0 4084 colorsnrna
-chr - tRNA tRNA 0 583 colortrna
-chr - NoncanonicalRNA NoncanonicalRNA 0 15754 colornoncanonicalrna
-chr - others others 0 8558 colorothers

@@ -1,0 +1,323 @@
+# DREME 5.0.2
+#     command: dreme -p way2345.sorted.merge.anno.utr3.fa -n bg/way2345.sorted.merge.anno.utr3.fa -norc -mink 5 -rna -o way2345.sorted.merge.anno.utr3.fa_dreme
+#   positives: 51984 from way2345.sorted.merge.anno.utr3.fa (Tue Sep 25 21:41:14 CST 2018)
+#   negatives: 51984 from bg/way2345.sorted.merge.anno.utr3.fa (Tue Sep 25 21:42:05 CST 2018)
+#        host: bnode02
+#        when: Tue Sep 25 21:42:35 CST 2018
+
+MEME version 5.0.2
+
+ALPHABET "RNA" RNA-LIKE
+A "Adenine" CC0000
+C "Cytosine" 0000CC
+G "Guanine" FFB300
+U "Uracil" 008000
+N "Any base" = ACGU
+X = ACGU
+. = ACGU
+V "Not U" = ACG
+H "Not G" = ACU
+D "Not C" = AGU
+B "Not A" = CGU
+M "Amino" = AC
+R "Purine" = AG
+W "Weak" = AU
+S "Strong" = CG
+Y "Pyrimidine" = CU
+K "Keto" = GU
+T = U
+END ALPHABET
+
+Background letter frequencies (from dataset):
+A 0.278 C 0.215 G 0.230 U 0.277
+
+
+MOTIF WNUUD DREME-1
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       WNUUD      25696      16629   1.9e-718   1.7e-713
+#            UUUUU       4552       2211   2.5e-194   2.2e-189
+#            UUUUA       4454       2247   4.1e-174   3.6e-169
+#            UGUUU       4561       2360   6.5e-168   5.6e-163
+#            AUUUU       3938       2037   4.9e-144   4.3e-139
+#            UAUUU       3542       1855   4.5e-125   3.9e-120
+#            UUUUG       3598       1968   2.2e-113   1.9e-108
+#            AUUUA       2206       1262   1.2e-060   1.0e-055
+#            UAUUA       1547        825   9.2e-052   8.0e-047
+#            AAUUU       1818       1051   1.7e-048   1.5e-043
+#            AUUUG       1934       1159   4.5e-046   3.9e-041
+#            UCUUU       2252       1421   7.6e-045   6.6e-040
+#            UGUUA       1432        854   6.8e-035   5.9e-030
+#            UAUUG       1296        773   1.1e-031   9.6e-027
+#            ACUUU       1766       1156   9.5e-031   8.2e-026
+#            AAUUA       1173        694   1.6e-029   1.3e-024
+#            UGUUG       1767       1216   6.2e-025   5.4e-020
+#            AAUUG       1072        652   7.6e-025   6.6e-020
+#            AGUUA        790        489   1.1e-017   9.9e-013
+#            AGUUU       1886       1414   3.5e-017   3.1e-012
+#            ACUUG        910        620   4.2e-014   3.6e-009
+#            UCUUA        873        605   1.2e-012   1.0e-007
+#            AGUUG        905        636   2.7e-012   2.3e-007
+#            ACUUA        595        398   1.8e-010   1.6e-005
+#            UCUUG        952        701   2.7e-010   2.3e-005
+
+letter-probability matrix: alength= 4 w= 5 nsites= 35438 E= 1.7e-713
+0.418421 0.000000 0.000000 0.581579
+0.263869 0.200886 0.293555 0.241690
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+0.231108 0.000000 0.236554 0.532338
+
+
+MOTIF UDWAW DREME-2
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UDWAW       9467       6467   5.0e-148   3.8e-143
+#            UGUAA       1410        763   1.7e-045   1.3e-040
+#            UAAAU       1320        766   4.4e-035   3.3e-030
+#            UAAAA       1717       1120   2.4e-030   1.9e-025
+#            UUAAA       1055        660   2.8e-022   2.2e-017
+#            UUAAU        591        335   1.2e-017   9.2e-013
+#            UGUAU        975        645   6.9e-017   5.2e-012
+#            UAUAU        754        471   2.0e-016   1.5e-011
+#            UUUAA        651        407   2.3e-014   1.8e-009
+#            UGAAA       1545       1230   7.3e-010   5.6e-005
+#            UGAAU        991        742   8.9e-010   6.7e-005
+#            UAUAA        821        612   1.5e-008   1.1e-003
+#            UUUAU        385        277   1.5e-005   1.1e+000
+
+letter-probability matrix: alength= 4 w= 5 nsites= 10379 E= 3.8e-143
+0.000000 0.000000 0.000000 1.000000
+0.308797 0.000000 0.472396 0.218807
+0.548704 0.000000 0.000000 0.451296
+1.000000 0.000000 0.000000 0.000000
+0.587918 0.000000 0.000000 0.412082
+
+
+MOTIF WBUGU DREME-3
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       WBUGU       4649       3286   1.5e-057   1.1e-052
+#            UGUGU       1387        884   5.4e-027   3.9e-022
+#            UUUGU        507        296   3.7e-014   2.6e-009
+#            ACUGU        919        655   1.1e-011   7.7e-007
+#            AGUGU        808        617   1.9e-007   1.4e-002
+#            UCUGU       1103        879   2.1e-007   1.5e-002
+#            AUUGU        451        319   1.0e-006   7.3e-002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 5167 E= 1.1e-052
+0.425585 0.000000 0.000000 0.574415
+0.000000 0.392878 0.421328 0.185794
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+
+
+MOTIF WNUAG DREME-4
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       WNUAG       2863       2061   5.0e-032   3.5e-027
+#            UGUAG        521        326   9.0e-012   6.2e-007
+#            AAUAG        439        290   1.7e-008   1.2e-003
+#            UUUAG        291        191   2.9e-006   2.0e-001
+#            AUUAG        317        224   3.5e-005   2.5e+000
+#            AGUAG        405        311   2.4e-004   1.7e+001
+#            ACUAG        314        236   4.9e-004   3.4e+001
+#            UAUAG        312        236   6.5e-004   4.5e+001
+#            UCUAG        371        302   4.2e-003   3.0e+002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 2959 E= 3.5e-027
+0.491720 0.000000 0.000000 0.508280
+0.255492 0.233187 0.304495 0.206827
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 1.000000 0.000000
+
+
+MOTIF UWUDC DREME-5
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UWUDC       2567       1860   8.3e-028   5.6e-023
+#            UUUGC        418        262   1.1e-009   7.1e-005
+#            UUUUC        583        404   5.7e-009   3.8e-004
+#            UAUUC        491        367   1.2e-005   8.1e-001
+#            UAUGC        468        351   2.3e-005   1.5e+000
+#            UUUAC        336        257   6.5e-004   4.4e+001
+#            UAUAC        318        243   8.5e-004   5.7e+001
+
+letter-probability matrix: alength= 4 w= 5 nsites= 2624 E= 5.6e-023
+0.000000 0.000000 0.000000 1.000000
+0.488186 0.000000 0.000000 0.511814
+0.000000 0.000000 0.000000 1.000000
+0.249238 0.000000 0.339558 0.411204
+0.000000 1.000000 0.000000 0.000000
+
+
+MOTIF WAAUR DREME-6
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       WAAUR       2570       1976   1.1e-019   7.0e-015
+#            AAAUG       1097        854   1.5e-008   1.0e-003
+#            AAAUA        644        475   2.1e-007   1.4e-002
+#            UAAUA        338        245   6.4e-005   4.2e+000
+#            UAAUG        561        450   2.5e-004   1.6e+001
+
+letter-probability matrix: alength= 4 w= 5 nsites= 2640 E= 7.0e-015
+0.666288 0.000000 0.000000 0.333712
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.374621 0.000000 0.625379 0.000000
+
+
+MOTIF UWGUV DREME-7
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UWGUV       1094        728   2.5e-018   1.6e-013
+#            UUGUA        115         47   4.5e-008   2.9e-003
+#            UAGUA        114         58   1.2e-005   7.4e-001
+#            UUGUG        296        210   7.3e-005   4.7e+000
+#            UUGUC        222        161   1.0e-003   6.7e+001
+#            UAGUC        156        109   2.3e-003   1.5e+002
+#            UAGUG        198        146   2.9e-003   1.9e+002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 1102 E= 1.6e-013
+0.000000 0.000000 0.000000 1.000000
+0.424682 0.000000 0.000000 0.575318
+0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.207804 0.343920 0.448276 0.000000
+
+
+MOTIF UARSU DREME-8
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UARSU        807        525   3.7e-015   2.3e-010
+#            UAAGU        228        136   7.8e-007   5.0e-002
+#            UAGGU        125         60   9.9e-007   6.2e-002
+#            UAACU        248        176   2.7e-004   1.7e+001
+#            UAGCU        209        160   6.1e-003   3.9e+002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 811 E= 2.3e-010
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.586930 0.000000 0.413070 0.000000
+0.000000 0.564735 0.435265 0.000000
+0.000000 0.000000 0.000000 1.000000
+
+
+MOTIF CACDCACA DREME-9
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST    CACDCACA        262        117   3.1e-014   2.0e-009
+#         CACACACA        225        103   6.5e-012   4.0e-007
+#         CACGCACA         24          7   1.7e-003   1.0e+002
+#         CACUCACA         25          8   2.3e-003   1.4e+002
+
+letter-probability matrix: alength= 4 w= 8 nsites= 350 E= 2.0e-009
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+0.865714 0.000000 0.062857 0.071429
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+
+
+MOTIF AAMAAAA DREME-10
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST     AAMAAAA        424        238   1.9e-013   1.2e-008
+#          AAAAAAA        252        130   2.0e-010   1.2e-005
+#          AACAAAA        197        118   4.9e-006   3.0e-001
+
+letter-probability matrix: alength= 4 w= 7 nsites= 434 E= 1.2e-008
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.555300 0.444700 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+
+
+MOTIF CWUUU DREME-11
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       CWUUU        602        386   2.6e-012   1.6e-007
+#            CAUUU        496        339   2.7e-008   1.7e-003
+#            CUUUU        108         48   8.6e-007   5.4e-002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 606 E= 1.6e-007
+0.000000 1.000000 0.000000 0.000000
+0.821782 0.000000 0.000000 0.178218
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+
+
+MOTIF UAAUY DREME-12
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UAAUY        470        311   6.2e-009   3.9e-004
+#            UAAUC        333        221   1.0e-006   6.5e-002
+#            UAAUU        138         90   8.9e-004   5.5e+001
+
+letter-probability matrix: alength= 4 w= 5 nsites= 474 E= 3.9e-004
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.708861 0.000000 0.291139
+
+
+MOTIF UGMUU DREME-13
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UGMUU       1244        984   1.4e-008   8.7e-004
+#            UGAUU        606        476   4.0e-005   2.4e+000
+#            UGCUU        641        517   1.4e-004   8.5e+000
+
+letter-probability matrix: alength= 4 w= 5 nsites= 1258 E= 8.7e-004
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000 0.000000
+0.487281 0.512719 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+
+
+MOTIF UACAUW DREME-14
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST      UACAUW        200        107   5.9e-008   3.6e-003
+#           UACAUA         92         42   9.2e-006   5.6e-001
+#           UACAUU        108         65   6.6e-004   4.0e+001
+
+letter-probability matrix: alength= 4 w= 6 nsites= 201 E= 3.6e-003
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000
+0.462687 0.000000 0.000000 0.537313
+
+
+MOTIF UUABU DREME-15
+
+#             Word        Pos        Neg    P-value    E-value
+# BEST       UUABU        271        169   6.3e-007   3.8e-002
+#            UUAGU         38         13   3.1e-004   1.9e+001
+#            UUACU        169        119   1.9e-003   1.1e+002
+#            UUAUU         64         37   4.7e-003   2.8e+002
+
+letter-probability matrix: alength= 4 w= 5 nsites= 271 E= 3.8e-002
+0.000000 0.000000 0.000000 1.000000
+0.000000 0.000000 0.000000 1.000000
+1.000000 0.000000 0.000000 0.000000
+0.000000 0.623616 0.140221 0.236162
+0.000000 0.000000 0.000000 1.000000
+
+
+# Stopping reason: E-value threshold exceeded
+#    Running time: 664.41 seconds

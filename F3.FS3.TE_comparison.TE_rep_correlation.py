@@ -1,3 +1,16 @@
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+plt.rcParams["font.family"] = "Helvetica"
+import seaborn as sns
+sns.set(style="ticks")
+sns.set_context("poster")
+from nested_dict import nested_dict
+import sys,os
+import pandas as pd, numpy as np
+from scipy import stats
+import gj
+
 def TE_rep_corr(TE1, TE2, savefn, label1='control', label2='RK33'):
 	df_TE1 = pd.read_csv(TE1, header=0, sep='\t')
 	df_TE2 = pd.read_csv(TE2, header=0, sep='\t')
@@ -62,7 +75,10 @@ def TE_rep_corr(TE1, TE2, savefn, label1='control', label2='RK33'):
 
 
 def main():
-	TE1 = '/Share2/home/zhangqf7/gongjing/zebrafish/result/riboseq_rnaseq/20190415_riboseq_vs_rnaseq_control_vs_rk33_rep1.TE.txt'
-	TE2 = '/Share2/home/zhangqf7/gongjing/zebrafish/result/riboseq_rnaseq/20190415_riboseq_vs_rnaseq_control_vs_rk33_rep2.TE.txt'
-	savefn = '/Share2/home/zhangqf7/gongjing/zebrafish/result/riboseq_rnaseq/20190415_TE_corr.txt'
+	TE1 = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/riboseq/20190415_riboseq_vs_rnaseq_control_vs_rk33_rep1.TE.txt'
+	TE2 = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/riboseq/20190415_riboseq_vs_rnaseq_control_vs_rk33_rep2.TE.txt'
+	savefn = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/riboseq/20190415_TE_corr.txt'
 	TE_rep_corr(TE1, TE2, savefn)#, label1='RK33-1', label2='RK33-2')
+
+if __name__ == '__main__':
+	main()

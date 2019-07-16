@@ -1,11 +1,17 @@
-import pandas as pd
-from scipy import stats
-
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+plt.rcParams["font.family"] = "Helvetica"
+import seaborn as sns
 sns.set(style="ticks")
 sns.set_context("poster")
+from nested_dict import nested_dict
+import sys,os
+import pandas as pd, numpy as np
+from scipy import stats
 
-gini = './RPKM_combine.merge.t200.gini.null40.txt'
-TE_bartel = './TE.matrix' 
+gini = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/RPKM_combine.merge.t200.gini.null40.txt'
+TE_bartel = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/riboseq/Bartel.TE.matrix' 
 
 df_gini = pd.read_csv(gini, header=0, index_col=0, sep='\t')
 print df_gini.head()
@@ -35,7 +41,7 @@ def plot_gini_TE_ratio(TE_time_col1='256cell', TE_time_col2='dome', stage_col1='
 #                   data=df_gini_TE, stat_func=stats.pearsonr, size=10,)
     sns.jointplot(y='%s-%s'%(TE_time_col2, TE_time_col1), x='%s/%s'%(stage_col2, stage_col1), 
                   data=df_gini_TE, kind="kde")
-    plt.savefig('./png/TE.%s_%s.pdf'%(stage_col1, stage_col2))
+    plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/riboseq/TE.%s_%s.pdf'%(stage_col1, stage_col2))
     plt.close()
     
     
@@ -51,16 +57,16 @@ def plot_gini_TE_ratio(TE_time_col1='256cell', TE_time_col2='dome', stage_col1='
 # plot_gini_TE_ratio(TE_time_col1='dome', TE_time_col2='shield', stage_col1='sphere(UTR3)', stage_col2='shield(UTR3)')
 
 
-plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(transcript)', stage_col2='sphere(transcript)')
-plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(UTR5)', stage_col2='sphere(UTR5)')
-plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(CDS)', stage_col2='sphere(CDS)')
-plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(UTR3)', stage_col2='sphere(UTR3)')
+# plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(transcript)', stage_col2='sphere(transcript)')
+# plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(UTR5)', stage_col2='sphere(UTR5)')
+# plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(CDS)', stage_col2='sphere(CDS)')
+# plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour4', stage_col1='64cell(UTR3)', stage_col2='sphere(UTR3)')
 
 
-plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(transcript)', stage_col2='shield(transcript)')
-plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(UTR5)', stage_col2='shield(UTR5)')
-plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(CDS)', stage_col2='shield(CDS)')
-plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(UTR3)', stage_col2='shield(UTR3)')
+# plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(transcript)', stage_col2='shield(transcript)')
+# plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(UTR5)', stage_col2='shield(UTR5)')
+# plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(CDS)', stage_col2='shield(CDS)')
+# plot_gini_TE_ratio(TE_time_col1='hour4', TE_time_col2='hour6', stage_col1='sphere(UTR3)', stage_col2='shield(UTR3)')
 
 plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour6', stage_col1='64cell(transcript)', stage_col2='shield(transcript)')
 plot_gini_TE_ratio(TE_time_col1='hour2', TE_time_col2='hour6', stage_col1='64cell(UTR5)', stage_col2='shield(UTR5)')
