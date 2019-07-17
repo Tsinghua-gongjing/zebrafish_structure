@@ -47,6 +47,7 @@ def plot_motif_logo(motif_ls, site_num_ls, pvalue_ls, tomtom_file, rbp_name):
     dd['log2(site_num)'] = np.log2(dd['site_num'])
     dd['motif'] = motif_ls
     print dd
+
     sns.set_style('ticks')
     fig,ax = plt.subplots(figsize=(25,20))
     dd.plot(kind='scatter', x='log2(site_num)', y='-log10(pvalue)', ax=ax)
@@ -73,10 +74,11 @@ def plot_motif_logo(motif_ls, site_num_ls, pvalue_ls, tomtom_file, rbp_name):
 rbp_name = read_RBP_name()
 print rbp_name
 
-motif_df = read_dmeme('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/egg_1cell/dreme_egg_1cell.txt')
+motif_df = read_dmeme('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/egg_cell1/utr3/dreme_egg_1cell.txt')
+motif_df.to_csv('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/egg_cell1/utr3/egg_cell1_motif_search_site_vs_pval.txt', header=True, index=False, sep='\t')
 motif_ls = list(motif_df[2])
 site_num_ls2 = map(int, list(motif_df[4]))
 pvalue_ls2 = [1.0e-100 if i < 1.0e-100 else i for i in map(float, list(motif_df[6]))]
-tomtom_file = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/egg_1cell/tomtom_egg_1cell_min5.tsv'
+tomtom_file = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/egg_cell1/utr3/tomtom_egg_1cell_min5.tsv'
 
 plot_motif_logo(motif_ls, site_num_ls2, pvalue_ls2, tomtom_file, rbp_name)
