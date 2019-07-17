@@ -7,7 +7,7 @@ import seaborn as sns
 sns.set(style="ticks")
 sns.set_context("poster")
 
-df = read_csv('/Users/soul/baiduyun/research/zhanglab/1-YANG_lab_cooperation_projects/zebrash/data_analysis/paper_figures/icSHAPE/transcript_num_with_str/20180526_stats.txt', sep="\t", header=None, index_col=0)
+df = read_csv('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/icSHAPE/transcript_count_icshape_stats.txt', sep="\t", header=None, index_col=0)
 df.index = ['Egg', '1 Cell', '4 Cell', '64 Cell', 'Sphere', 'Shield']
 sample_ls = ['Egg', '1 Cell', '4 Cell', '64 Cell', 'Sphere', 'Shield']
 df_plot = df.loc[sample_ls,1]

@@ -25,3 +25,11 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/egg.icshape.w200.s30.T2.t200.out 6070
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/1cell.icshape.w200.s30.T2.t200.out       6004
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/4cell.icshape.w200.s30.T2.t200.out       6910
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/64cell.icshape.w200.s30.T2.t200.out      7491
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/sphere.icshape.w200.s30.T2.t200.out      7655
+# /Share/home/zhangqf7/gongjing/zebrafish/data/icSHAPE_final_out_new_win/shield.icshape.w200.s30.T2.t200.out      6187
