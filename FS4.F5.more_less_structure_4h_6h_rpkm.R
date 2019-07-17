@@ -61,9 +61,9 @@ setwd('/Share/home/zhangqf7/gongjing/zebrafish/result/zhangting_provided/Figure-
 # print(length(hur.down.trans))
 
 # use iclip, new rep1/2
-hur.up.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/result/iCLIP/h4_all_rep12.c6.utr3.bed.structure.e0.txt.lessstructure4',stringsAsFactors=F,sep='\t',header=F)
-hur.down.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/result/iCLIP/h4_all_rep12.c6.utr3.bed.structure.e0.txt.morestructure4',stringsAsFactors=F,sep='\t',header=F)
-hur.stable.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/result/iCLIP/h4_all_rep12.c6.utr3.bed.structure.e0.txt.stablestructure4',stringsAsFactors=F,sep='\t',header=F)
+hur.up.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/iCLIP/h4/h4_all_rep12.c6.utr3.bed.structure.e0.txt.lessstructure4',stringsAsFactors=F,sep='\t',header=F)
+hur.down.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/iCLIP/h4/h4_all_rep12.c6.utr3.bed.structure.e0.txt.morestructure4',stringsAsFactors=F,sep='\t',header=F)
+hur.stable.trans <- read.table('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/iCLIP/h4/h4_all_rep12.c6.utr3.bed.structure.e0.txt.stablestructure4',stringsAsFactors=F,sep='\t',header=F)
 hur.up.trans <- hur.up.trans$V1
 hur.down.trans <- hur.down.trans$V1
 hur.stable.trans <- hur.stable.trans$V1
