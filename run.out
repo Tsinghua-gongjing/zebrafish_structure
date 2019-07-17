@@ -1,38 +1,39 @@
-Sender: LSF System <zlsfadmin@zhnode02>
-Subject: Job 44533: <python FS4.iclip_compare_with_human.py> in cluster <zcluster> Done
+Sender: LSF System <zlsfadmin@zhnode01>
+Subject: Job 44535: <python FS4.iclip_bam_corr.py> in cluster <zcluster> Done
 
-Job <python FS4.iclip_compare_with_human.py> was submitted from host <zio01> by user <zhangqf7> in cluster <zcluster>.
-Job was executed on host(s) <zhnode02>, in queue <Z-HNODE>, as user <zhangqf7> in cluster <zcluster>.
+Job <python FS4.iclip_bam_corr.py> was submitted from host <zio01> by user <zhangqf7> in cluster <zcluster>.
+Job was executed on host(s) <zhnode01>, in queue <Z-HNODE>, as user <zhangqf7> in cluster <zcluster>.
 </Share2/home/zhangqf7> was used as the home directory.
 </Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure> was used as the working directory.
-Started at Wed Jul 17 10:41:32 2019
-Results reported on Wed Jul 17 10:41:40 2019
+Started at Wed Jul 17 10:51:37 2019
+Results reported on Wed Jul 17 10:51:49 2019
 
 Your job looked like:
 
 ------------------------------------------------------------
 # LSBATCH: User input
-python FS4.iclip_compare_with_human.py
+python FS4.iclip_bam_corr.py
 ------------------------------------------------------------
 
 Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   6.10 sec.
-    Max Memory :                                 18 MB
-    Average Memory :                             18.00 MB
+    CPU time :                                   11.28 sec.
     Total Requested Memory :                     -
     Delta Memory :                               -
-    Max Swap :                                   859 MB
-    Max Processes :                              3
-    Max Threads :                                19
 
 The output (if any) follows:
 
-read: /Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/ref/danRer10.refSeq.transcriptome.trans.bed2, n=16107
-table1: 4845
-table2: 7252
+             #'chr'  'start'  'end'  'rep1'  'rep2'  'rep3'  'rep4'  log2('rep1')  log2('rep2')
+0  chrUn_KN150429v1        0  10000     7.0     8.0     6.0    11.0      3.000000      3.169925
+1  chrUn_KN149969v1        0  10000     8.0     3.0     1.0     3.0      3.169925      2.000000
+2  chrUn_KN150139v1        0  10000    33.0    38.0     1.0     8.0      5.087463      5.285402
+3  chrUn_KN149908v1        0  10000    18.0    11.0     8.0    10.0      4.247928      3.584963
+4  chrUn_KN150207v1        0  10000    10.0     8.0     1.0    10.0      3.459432      3.169925
+Index([u'#'chr'', u''start'', u''end'', u''rep1'', u''rep2'', u''rep3'',
+       u''rep4'', u'log2('rep1')', u'log2('rep2')'],
+      dtype='object')
 
 
 PS:

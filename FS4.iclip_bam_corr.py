@@ -13,7 +13,7 @@ from nested_dict import nested_dict
 import numpy as np, pandas as pd
 from scipy import stats
 
-def plot(txt='/Share2/home/zhangqf7/gongjing/zebrafish/result/iCLIP/bam_corr/h6_full.readCounts.tab', sample1="'rep1'", sample2="'rep2'"):
+def plot(txt='/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/iCLIP/bam_corr/h4_full.readCounts.tab', sample1="'rep1'", sample2="'rep2'"):
 	df = pd.read_csv(txt, header=0, sep='\t')
 	df['log2(%s)'%(sample1)] = np.log2(df[sample1]+1)
 	df['log2(%s)'%(sample2)] = np.log2(df[sample2]+1)
