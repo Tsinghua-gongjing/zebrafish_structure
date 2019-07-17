@@ -1,5 +1,17 @@
-gj_gini = '/Users/soul/BaiduyunDisk/research/zhanglab/1-YANG_lab_cooperation_projects/zebrash/data_analysis/paper_figures/icSHAPE/global_str_change/data/RPKM_combine.merge.addRP33.t200.gini.null40.txt'
-df_gj_gini = pd.read_csv(gj_gini,header=0, index_col=0, sep='\t', na_values='NULL')
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+plt.rcParams["font.family"] = "Helvetica"
+import seaborn as sns
+sns.set(style="ticks")
+sns.set_context("poster")
+from nested_dict import nested_dict
+import sys,os
+import pandas as pd, numpy as np
+from scipy import stats
+
+gini = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/RPKM_combine.merge.addRK33.t200.gini.null40.txt'
+df_gj_gini = pd.read_csv(gini,header=0, index_col=0, sep='\t', na_values='NULL')
 sample_ls = ['egg', '1cell', '1cell-RK-33', '4cell', '64cell', 'sphere', 'shield']
 feature = 'transcript'
 col_selected = ['%s(%s)'%(j,feature) for j in sample_ls]
@@ -19,8 +31,9 @@ sns.despine(top=True, right=True)
 plt.xlabel('Gini index')
 plt.ylabel('Number of transcript')
 # plt.xlim((0.3,0.7))
+plt.tight_layout()
 plt.legend()
-# plt.savefig('../icSHAPE/1cell_change/comparison_gini_1cell_vs_egg.pdf', dpi=220)
+plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/FS3.comparison_gini_1cell_vs_egg.hist.pdf', dpi=220)
 print 'egg', np.median(plot_data['egg'].dropna())
 print '1cell', np.median(plot_data['1cell'].dropna())
 # stats.ttest_ind(plot_data['egg'].dropna(), plot_data['1cell'].dropna(), )
@@ -39,8 +52,9 @@ sns.despine(top=True, right=True)
 plt.xlabel('Gini index')
 plt.ylabel('Number of transcript')
 # plt.xlim((0.3,0.7))
+plt.tight_layout()
 plt.legend()
-plt.savefig('../icSHAPE/1cell_change/cell1_RK33_gini_hist.pdf', dpi=220)
+plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/F3.comparison_gini_1cell_vs_RK33.hist.png', dpi=220)
 print '1cell-RK-33', np.median(plot_data['1cell-RK-33'].dropna())
 print '1cell', np.median(plot_data['1cell'].dropna())
 

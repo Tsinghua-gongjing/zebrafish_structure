@@ -1,11 +1,14 @@
 import sys
-sys.path.append('/Share/home/zhangqf7/gongjing/zebrafish/script')
+# sys.path.append('/Share/home/zhangqf7/gongjing/zebrafish/script')
 import matplotlib as mpl
 mpl.use('Agg')
 import pandas as pd, numpy as np
 import matplotlib.pyplot as plt
 import gj
 from glob import glob
+
+
+
 ls_ls, ls_ls_label = [], []
 file_ls = sys.argv[1:-1]
 savefn = sys.argv[-1]
