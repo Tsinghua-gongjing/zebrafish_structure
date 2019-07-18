@@ -1,0 +1,15 @@
+# BEST       WNUUD      25696      16629   1.9e-718   1.7e-713
+# BEST       UDWAW       9467       6467   5.0e-148   3.8e-143
+# BEST       WBUGU       4649       3286   1.5e-057   1.1e-052
+# BEST       WNUAG       2863       2061   5.0e-032   3.5e-027
+# BEST       UWUDC       2567       1860   8.3e-028   5.6e-023
+# BEST       WAAUR       2570       1976   1.1e-019   7.0e-015
+# BEST       UWGUV       1094        728   2.5e-018   1.6e-013
+# BEST       UARSU        807        525   3.7e-015   2.3e-010
+# BEST    CACDCACA        262        117   3.1e-014   2.0e-009
+# BEST     AAMAAAA        424        238   1.9e-013   1.2e-008
+# BEST       CWUUU        602        386   2.6e-012   1.6e-007
+# BEST       UAAUY        470        311   6.2e-009   3.9e-004
+# BEST       UGMUU       1244        984   1.4e-008   8.7e-004
+# BEST      UACAUW        200        107   5.9e-008   3.6e-003
+# BEST       UUABU        271        169   6.3e-007   3.8e-002
