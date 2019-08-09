@@ -1,12 +1,12 @@
-Sender: LSF System <zlsfadmin@zhnode02>
-Subject: Job 67691: <python F4.FS4.motif_scatter_heatmap.sphere_shield.py> in cluster <zcluster> Done
+Sender: LSF System <zlsfadmin@zhnode01>
+Subject: Job 67798: <python F4.FS4.motif_scatter_heatmap.sphere_shield.py> in cluster <zcluster> Done
 
 Job <python F4.FS4.motif_scatter_heatmap.sphere_shield.py> was submitted from host <zio01> by user <zhangqf7> in cluster <zcluster>.
-Job was executed on host(s) <zhnode02>, in queue <Z-HNODE>, as user <zhangqf7> in cluster <zcluster>.
+Job was executed on host(s) <zhnode01>, in queue <Z-HNODE>, as user <zhangqf7> in cluster <zcluster>.
 </Share2/home/zhangqf7> was used as the home directory.
 </Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure> was used as the working directory.
-Started at Fri Aug  9 23:45:02 2019
-Results reported on Fri Aug  9 23:45:17 2019
+Started at Sat Aug 10 00:02:29 2019
+Results reported on Sat Aug 10 00:02:39 2019
 
 Your job looked like:
 
@@ -19,14 +19,14 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   9.58 sec.
-    Max Memory :                                 17 MB
-    Average Memory :                             17.00 MB
+    CPU time :                                   10.61 sec.
+    Max Memory :                                 11 MB
+    Average Memory :                             11.00 MB
     Total Requested Memory :                     -
     Delta Memory :                               -
-    Max Swap :                                   854 MB
+    Max Swap :                                   277 MB
     Max Processes :                              3
-    Max Threads :                                19
+    Max Threads :                                4
 
 The output (if any) follows:
 

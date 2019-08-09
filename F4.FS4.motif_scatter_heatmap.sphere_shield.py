@@ -71,8 +71,18 @@ savefn = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/re
 plt.tight_layout()
 plt.savefig(savefn)
 
+
+from adjustText import adjust_text
+
 fig,ax=plt.subplots()
 df.plot(kind='scatter', x='log2(fimo1_motif)', y='-log10(pvalue_adj)', ax=ax)
+
+df=df[(df['log2(fimo1_motif)']>10)|(df['-log10(pvalue_adj)']>30)]
+texts = []
+for x, y, s in zip(df['log2(fimo1_motif)'], df['-log10(pvalue_adj)'], df['RBP_name']):
+    texts.append(plt.text(x, y, s, fontsize=10))
+adjust_text(texts, only_move={'text': 'y'})
+
 plt.tight_layout()
 plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/FS4.fimo.enrich.scatter.pdf')
 
