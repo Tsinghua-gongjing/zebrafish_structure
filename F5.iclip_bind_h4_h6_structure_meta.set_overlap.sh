@@ -17,18 +17,18 @@ decay=/Share2/home/zhangqf7/gongjing/zebrafish/result/RNAseq_New_refseq/decay_id
 stable=/Share2/home/zhangqf7/gongjing/zebrafish/result/RNAseq_New_refseq/stable_id.txt
 zygotic=/Share2/home/zhangqf7/gongjing/zebrafish/result/RNAseq_New_refseq/zygotic_id.txt
 
-python venn_plot.py ${h4_all}.structure.e0.txt.morestructure4:$decay:$stable iCLIP_more_structure:decay:stable ${h4_all}.structure.e0.txt.morestructure4.KO.decay.pdf
-python venn_plot.py ${h4_all}.structure.e0.txt.lessstructure4:$decay:$stable iCLIP_less_structure:decay:stable ${h4_all}.structure.e0.txt.lessstructure4.KO.stable.pdf
-python venn_plot.py ${h4_all}.structure.e0.txt.stablestructure4:$decay:$stable iCLIP_stable_structure:decay:stable ${h4_all}.structure.e0.txt.stablestructure4.KO.stable.pdf
+# python venn_plot.py ${h4_all}.structure.e0.txt.morestructure4:$decay:$stable iCLIP_more_structure:decay:stable ${h4_all}.structure.e0.txt.morestructure4.KO.decay.pdf
+# python venn_plot.py ${h4_all}.structure.e0.txt.lessstructure4:$decay:$stable iCLIP_less_structure:decay:stable ${h4_all}.structure.e0.txt.lessstructure4.KO.stable.pdf
+# python venn_plot.py ${h4_all}.structure.e0.txt.stablestructure4:$decay:$stable iCLIP_stable_structure:decay:stable ${h4_all}.structure.e0.txt.stablestructure4.KO.stable.pdf
 
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $decay ${h4_all}.structure.e0.txt.morestructure4 > ${h4_all}.structure.e0.txt.morestructure4.decay
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.morestructure4.decay ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.morestructure4.decay.iclip.bed 
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $decay ${h4_all}.structure.e0.txt.morestructure4 > ${h4_all}.structure.e0.txt.morestructure4.decay
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.morestructure4.decay ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.morestructure4.decay.iclip.bed 
 
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $stable ${h4_all}.structure.e0.txt.lessstructure4 > ${h4_all}.structure.e0.txt.lessstructure4.stable
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.lessstructure4.stable ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.lessstructure4.stable.iclip.bed 
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $stable ${h4_all}.structure.e0.txt.lessstructure4 > ${h4_all}.structure.e0.txt.lessstructure4.stable
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.lessstructure4.stable ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.lessstructure4.stable.iclip.bed 
 
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $stable ${h4_all}.structure.e0.txt.stablestructure4 > ${h4_all}.structure.e0.txt.stablestructure4.stable
-awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.stablestructure4.stable ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.stablestructure4.stable.iclip.bed 
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $1}' $stable ${h4_all}.structure.e0.txt.stablestructure4 > ${h4_all}.structure.e0.txt.stablestructure4.stable
+# awk 'NR==FNR{a[$1]=$0;next} $1 in a{print $0}' ${h4_all}.structure.e0.txt.stablestructure4.stable ${h4_all}|awk '{if($3-$2==41)print}' > ${h4_all}.structure.e0.txt.stablestructure4.stable.iclip.bed 
 
 ol1=${h4_all}.structure.e0.txt.morestructure4.decay.iclip.bed
 ol2=${h4_all}.structure.e0.txt.lessstructure4.stable.iclip.bed

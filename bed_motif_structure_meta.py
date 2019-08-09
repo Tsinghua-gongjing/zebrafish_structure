@@ -126,9 +126,9 @@ def two_bed_diff(bed_ls, bed_label_ls, icshape_out_ls, savefn, extend=20, test_s
 		print region_mean
 		region_mean_ls.append(region_mean)
 		region_df_ls.append(region_df)
-		ax.plot(region_mean, label="%s(n=%s)"%(bed_label,str(entry_num)), marker='.')
+		# ax.plot(region_mean, label="%s(n=%s)"%(bed_label,str(entry_num)), marker='.')
 	region_mean_diff = [i-j for i,j in zip(region_mean_ls[0], region_mean_ls[1])]
-	# ax.plot(region_mean_diff, label="diff", marker='.')
+	ax.plot(region_mean_diff, label="diff", marker='.')
 	plt.axvspan(extend, len(region_mean)-extend-1, color='grey', alpha=0.5)
 
 	if test_significance:
@@ -146,7 +146,7 @@ def two_bed_diff(bed_ls, bed_label_ls, icshape_out_ls, savefn, extend=20, test_s
 			else:
 				pass
 
-	ax.set_ylim(0,0.4)
+	# ax.set_ylim(0,0.4)
 	plt.legend()
 	plt.tight_layout()
 	plt.savefig(savefn)
@@ -215,8 +215,8 @@ def two_bed_diff3(bed_ls, bed_label_ls, icshape_out_ls, savefn, extend=20):
 	plt.close()
 
 if __name__ == '__main__':
-	bed_meta2(bed_ls=sys.argv[1].split(':'), bed_label_ls=sys.argv[2].split(':'), icshape_out_ls=sys.argv[3].split(':'), savefn=sys.argv[4], extend=int(sys.argv[5]))
-	# two_bed_diff2(bed_ls=sys.argv[1].split(':'), bed_label_ls=sys.argv[2].split(':'), icshape_out_ls=sys.argv[3].split(':'), savefn=sys.argv[4], extend=int(sys.argv[5]))
+	# bed_meta2(bed_ls=sys.argv[1].split(':'), bed_label_ls=sys.argv[2].split(':'), icshape_out_ls=sys.argv[3].split(':'), savefn=sys.argv[4], extend=int(sys.argv[5]))
+	two_bed_diff(bed_ls=sys.argv[1].split(':'), bed_label_ls=sys.argv[2].split(':'), icshape_out_ls=sys.argv[3].split(':'), savefn=sys.argv[4], extend=int(sys.argv[5]))
 
 
 # 

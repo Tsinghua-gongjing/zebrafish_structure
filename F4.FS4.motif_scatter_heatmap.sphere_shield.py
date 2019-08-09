@@ -30,7 +30,7 @@ plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure
 
 
 
-f = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/sphere_shield/fimo.enrich.txt'
+f = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/data/dynamic_region/sphere_shield/utr3/fimo.enrich.txt'
 df = pd.read_csv(f, header=0, sep='\t')
 print df.head()
 
@@ -70,3 +70,10 @@ sns.heatmap(pd.DataFrame(df_h20['-log10(pvalue_adj)']), linewidths=0.5, cmap="Yl
 savefn = '/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/FS4.fimo.enrich.heatmap.pdf'
 plt.tight_layout()
 plt.savefig(savefn)
+
+fig,ax=plt.subplots()
+df.plot(kind='scatter', x='log2(fimo1_motif)', y='-log10(pvalue_adj)', ax=ax)
+plt.tight_layout()
+plt.savefig('/Share2/home/zhangqf7/gongjing/zebrafish/script/zebrafish_structure/results/FS4.fimo.enrich.scatter.pdf')
+
+
